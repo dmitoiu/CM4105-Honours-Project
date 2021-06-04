@@ -1,0 +1,141 @@
+%! Author = Darie-Dragos Mitoiu
+%! Date = 23/08/2020
+
+% Preamble
+\documentclass[12pt]{report}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[titles]{tocloft}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{lmodern}
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage[round, numbers]{natbib}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{scrextend}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage[acronym]{glossaries}
+\graphicspath{images/}
+
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\bibname}{References}
+\renewcommand{\cftchapfont}{\normalfont\bfseries}
+\renewcommand{\cftchappagefont}{\normalfont\bfseries}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
+
+\setlength{\tabcolsep}{0.5em}
+
+\geometry{
+    paper=a4paper, %        Change to letterpaper for US letter
+    inner=2.5cm, %          Inner margin
+    outer=3.0cm, %          Outer margin
+    bindingoffset=.5cm, %   Binding offset
+    top=1.8cm, %            Top margin
+    %showframe, %           Uncomment to show how the type block is set on the page
+}
+
+\AtBeginDocument{
+    \hypersetup{pdftitle=A Desktop Application for Maintenance of Computer Systems}
+    \hypersetup{pdfauthor=Darie-Dragos Mitoiu}
+    \hypersetup{pdfkeywords=Computer Systems Maintenance}
+}
+
+\author{Darie-Dragos Mitoiu}
+
+\fancyhf{}
+\fancyhead[RE]{\chaptername~\thechapter}
+\fancyhead[LO]{\leftmark}
+
+\fancyfoot[C]{\thepage}
+
+\pagestyle{fancy}
+
+\makeglossary
+\input{chapters/acronyms}
+
+\lstset{numbers=left,xleftmargin=2em,frame=single,framexleftmargin=1.5em}
+
+% Document
+\begin{document}
+
+    \pagenumbering{Roman}
+
+    \input{titlepage}
+
+    \chapter*{Declaration}
+    \addcontentsline{toc}{chapter}{Declaration}
+    \input{chapters/declaration}
+
+    \chapter*{Abstract}
+    \addcontentsline{toc}{chapter}{Abstract}
+    \input{chapters/abstract}
+
+    \chapter*{Acknowledgements}
+    \addcontentsline{toc}{chapter}{Acknowledgements}
+    \input{chapters/acknowledgements}
+
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{Contents}
+
+    \input{chapters/figures}
+    \addcontentsline{toc}{chapter}{List of Figures}
+
+    \input{chapters/tables}
+    \addcontentsline{toc}{chapter}{List of Tables}
+
+    \lstlistoflistings
+    \addcontentsline{toc}{chapter}{List of Algorithms}
+
+    \printglossary[type=\acronymtype]
+    \addcontentsline{toc}{chapter}{List of Acronyms}
+
+    \chapter{Introduction}
+    \pagenumbering{arabic}
+    \input{chapters/introduction}
+
+    \chapter{Background}
+    \input{chapters/background}
+
+    \chapter{Specifications}
+    \input{chapters/specification}
+
+    \chapter{Design}
+    \input{chapters/design}
+
+    \chapter{Implementation}
+    \input{chapters/implementation}
+
+    \setlength{\parindent}{1.5em}
+    \chapter{Evaluation}
+    \input{chapters/evaluation}
+
+    \chapter{Conclusions}
+    \input{chapters/conclusion}
+
+    \appendix
+    \input{chapters/tests}
+
+    \chapter{Project Log}
+    \input{chapters/log}
+
+    \chapter{Credits}
+    \input{chapters/credits}
+
+    \nocite{*}
+    \bibliographystyle{agsm}
+    \bibliography{bibliography/bibliography}
+    \addcontentsline{toc}{chapter}{References}
+
+\end{document}

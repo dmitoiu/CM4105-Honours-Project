@@ -1,0 +1,69 @@
+In this chapter the core aspects presented in the background, design and implementation chapters
+will be discussed. To recapitulate, this project had the ultimate goal to investigate
+if the forecast of computer systems failure using the Hard-Disk Drive \acrfull{smart} indicators
+it is possible and if so, to translate the discoveries into a real-world appliance.
+To do this, four main objectives had to satisfied, these objectives were to
+research forecasting of computer systems failure practices, to create a \acrfull{cc} Server
+Application, to create an Agent (Client-Side) Application to collect the Hard-Disk Drive
+\acrfull{smart} data and last but not the least to investigate the viability of forecasting
+computer systems using the machine learning algorithm called \acrfull{svm}.
+The four objectives mentioned have been completed successfully.
+
+This chapter will also cover the challenges encountered during the course of the project,
+alternatives approaches for the forecasting of computer systems failure, future work that can be performed for the current
+project and last but not the least the auto-evaluation or the critical analysis from a
+personal point of view for this project will be given.
+
+\section{Maintenance of Computer Systems}
+
+During the background chapter it was seen that the research area related to the
+maintenance of computer systems it is a vast and complex environment, the complexity of the
+computer systems being largely represented by the dynamic and unforseen runtime of the
+systems, for this type of complexity the classical reactive measure which would be taken
+would not suffice and because of this a different approach had to be taken which was to
+forecast possible failure events of computer systems.
+In the background chapter it was seen that there are multiple approaches to the forecasting
+of computer systems failure, this document only covered two of those approaches, the first
+approach being the use of the machine learning algorithm called \acrfull{svms} in association with the
+Hard-Disk Drive \acrfull{smart} indicators and the second approach being the use of the
+statistical machine learning algorithm called \acrfull{hmm} in association with a series of
+hardware sensors which will allow a failure probability to be computed.
+
+\section{Future Work}
+
+The project can be considered a success considering the high level of complexity and the amount
+of work that had to be invested into this project, as the project consists of three sub-projects,
+elements which are the \acrfull{cc} Server Application, the Agent (Client-Side) Application and the Machine Learning
+aspect. The three sub-project elements have been completed successfully. However, the Machine
+Learning aspect of the project on its own does not present any real-world problem solving,
+because of this the Machine Learning aspect of using the \acrfull{svms} algorithm in association
+with the Hard-Disk Drive \acrfull{smart} indicators must be translated into a feature for the
+\acrfull{cc} Server Application, this feature should allow the training of machine learning
+models using existing Hard-Disk Drive \acrfull{smart} data from a single vendor of Hard-Disk
+components and tested on machines which use the same vendor, the use of single vendor of
+Hard-Disk components it is important in order to have accurate predictions. \par
+In addition to the Machine Learning feature for the \acrfull{cc} Server Application, the addition of a
+native agent application for Windows type of Operating System must be implemented in the
+future as the current Java Archive (.jar) Agent Application will require the installation
+of the Java Runtime Environment 8 on the machine which will execute the program.
+
+\section{Auto-Evaluation}
+
+Considering the level of project complexity, the time frame allocated and the effort put
+to complete the project, I feel satisfied with the final result and how the project was
+managed during the course of the whole process. I believe that I worked to the best of my
+ability at the current stage and I made use of the available time in the best possible
+way. The design and implementation phases have required more time than the research part
+of the project due to the iteration processes which were used in order to reach the final
+result. \par
+When it comes to the most difficult aspect of the project, each stage had it's own specific
+challenges but for me the most difficult stage of the project was the design phase which
+had to be looked into multiple times due to the inability to find the right design from the
+start. \par
+This project was driven by the passion for network programming, at the start of the project
+the best method of learning this branch was to create a reactive maintenance tool for
+computer systems, even though the final product does not present any reactive maintenance
+features and it aims at a predictive method when it comes to the failure of computer
+systems, the main motivation of conducting the project was that in the future the product
+could present both reactive maintenance features and predictive ones using different machines learning
+algorithms.

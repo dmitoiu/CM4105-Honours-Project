@@ -1,0 +1,61 @@
+The two project components mentioned in the design and implementation chapters
+- \acrfull{cc} Server Application and the Agent (Client-Side) Application - have been
+successfully implemented. The networking features of both applications will allow the transfer of data between the \acrfull{cc}
+and the Agent (Client-Side) application successfully, however, due to lack of resources in the form of computer systems
+for data collection, the forecasting of computer systems is not present at the current stage for the \acrfull{cc}
+Server Application, instead a Static Analysis was performed in the implementation chapter
+in order to prove the viability of forecasting computer systems failure using the Hard-Disk Drive \acrfull{smart}
+indicators.
+It is important to note that due to lack of resources, time and the high level of project complexity
+there was a permanent risk of project failure, yet a foundation which will allow
+future development it is present and the forecasting of computer systems failure was proved and evidenced. \par
+Firstly, in this chapter the two main components - \acrfull{cc} Server Application and
+the Agent (Client-Side) application - of the project will be evaluated
+against the functional requirements mentioned in the specifications chapter using their appropriate notes. \par
+Secondly, this chapter will cover and evaluate the viability of forecasting computer systems failure
+using the Hard-Disk Drive \acrfull{smart} indicators and a considerable amount of data collected to
+train machine learning algorithms such as \acrfull{svms}, Logistic Regression and the Random-Forest Model. \par
+Finally, this chapter will cover how possible improvements related to the - \acrfull{cc} Server Application,
+Agent (Client-Side) Application and the machine learning aspect - of the project could be performed. The improvements
+features which will be discussed in this chapter will concern the viability of future development for the - \acrfull{cc}
+Server Application by adding the Machine Learning discoveries presented into the implementation chapter
+into a viable feature which will forecast computer systems failure using the Hard-Disk Drive \acrfull{smart}
+indicators.
+
+\section{Acceptance Testing}
+
+The term "Acceptance Testing" refers to a technique used for software testing which
+is performed in order to determine whether a specific software system has met or not a series of
+requirements. The role of an acceptance test it is to evaluate if the system is compliant with
+the business requirements and to check if it has met the needs of the end-users (Tutorials Point 2021).
+
+\subsection{Command and Control (C\&C)}
+
+The \acrfull{cc} Server Application at the end of the project development cycle in the allocated time frame presents
+73 functional requirements out of 86 functional requirements mentioned in the specifications chapter. It is easy to
+notice that the number mentioned shows some considerable development success. However, some functional requirements
+labeled as "should" and "could" have not been implemented, either from lack of available time or because a different
+development approach has been taken, e.g: The machine learning aspect of the \acrfull{cc} Server Application has been
+replaced with a static analysis of a BackBlaze dataset.
+
+\subsection{Agent (Client-Side)}
+
+The Agent (Client-Side) Application at the end of the project development cycle in the allocated time frame presents
+10 functional requirements out of 12 functional requirements mentioned in the specifications chapter. It is easy to
+notice that the number mentioned shows some considerable development success. However, some functional requirements
+labeled as "should" have not been implemented due to lack of development time.
+
+\subsection{Machine Learning}
+
+The Machine Learning Aspect of the project had to be associated with the use the of the BlackBlaze Hard-Disk Drive
+\acrfull{smart} data in order to prove the viability of computer systems failure predictions as there was a lack of
+resources in the form of computer systems. The Support Vector Machines algorithm was used in association with the
+BackBlaze dataset and an accuracy of 94\% was produced, it is safe to say that the machine learning aspect of the
+project was a complete success.
+
+\section{Improvements}
+
+While the metrics of the Support Vector Machines algorithm are promising, the static analysis will not offer any real
+world problem solving, for this reason the \acrfull{cc} Server Application must present a feature in the future which
+will allow the training of machine learning models and the testing of the models on real computer systems using a Java
+library such as \acrfull{smile} which will give access to the \acrfull{svm} algorithm.

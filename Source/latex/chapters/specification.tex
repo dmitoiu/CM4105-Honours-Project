@@ -1,0 +1,444 @@
+As it was seen in the background chapter, a series of interpretations or conclusions were resulted after the
+literature review part was completed, these interpretations or conclusions will allow the creation of a
+series of aims and objectives in the form of project specifications which will ultimately allow the creation
+and execution of the design, implementation and testing of a potential solution presented in the form of
+a desktop application for the maintenance of computer systems problem. The ultimate goal of this project
+is to provide a solution to the maintenance of computer systems problem by creating a desktop application
+which will allow the near-real time monitoring of possible candidate computer systems and provide failure
+or maintenance predictions based on the storage system features. This project will focus on the Hard-Disk’s
+S.M.A.R.T (Self-Monitoring, Analysis and Reporting Technology) indicators which can be used in association
+with machine learning algorithms such as the Support Vector Machines (SVM) algorithm in order to provide a
+decent result when it comes to failure or maintenance predictions of desktop computer systems. According
+to Baldoni, Montanari and Rizzuto (2014) a competent programming language that could solve the problem of
+maintenance of computer systems in a predictive manner it is the general- purpose programming language
+called Java. This general-purpose programming language was used in solving the maintenance of computer
+systems problem in association with the machine learning algorithm called the Hidden Markov Model (HMM).
+The initiative of using the general-purpose programming language called Java will be considered but without
+the machine learning algorithm called Hidden Markov Model (HMM) as this algorithm is not used in association
+with the Hard-Disk’s S.M.A.R.T (Self-Monitoring, Analysis and Reporting Technology), instead the Support
+Vector Machines (SVM) will be used for this project. The solution provided by this project will be aimed
+directly at a specific case of desktop computer system which are used by the institution called Robert
+Gordon University. The solution to the maintenance of computer systems problem will be achieved by
+completing two distinct stages, each stage having multiple objectives and sub-objectives.
+Before starting the design, implementation and testing of the project a series of specifications
+will be defined using the MoSCoW system. This system is essential for any software development
+project as it allows the prioritisations of the tasks in sections named as “must”, “should” and
+“could”. The “must” requirements have to be implemented in order to consider the project a success,
+the “should” requirements can be considered as non-crucial elements for the project and the “could”
+requirements will be implemented in the ideal scenario.
+
+\newpage
+
+The first stage will represent the Server-Side or the Command and Control (C\&C) part of the desktop application
+which will allow the establishment of connections for possible clients or agents to its address and to
+a specific listening port that will be set by the user. Once a number of agents or clients have been
+connected to the Command and Control (C\&C) Server, the remote execution of commands for a potential
+client or machine that may require maintenance will be possible.
+
+The second stage will represent the Client-Side or the Agent part of the desktop application which
+will be created in a dynamic way by the Server-Side or Command and Control (C\&C) Desktop Application.
+The Agent or the Client created will ultimately be responsible for sending relevant information to
+the Command and Control (C\&C) Server and potentially executing specific instructions on the client
+machine which will be sent or instructed by the Command and Control (C\&C) Application.
+
+\section{Functional Requirements}
+
+\subsection{Command and Control (C\&C)}
+
+\noindent
+\textbf{Controller}
+
+\begin{enumerate}
+    \item The Desktop Application must validate the user input
+    \begin{enumerate}
+        \item The validation of the user input must be done using the third party java library called
+              Appache Commons,
+        \item The validation of the user input must be performed for the TCP Listening ports when
+              records will be added to the local database,
+        \item The validation of the user input must be performed for the IP or DNS address when
+              records will be added to the local database.
+    \end{enumerate}
+    \item The Desktop Application should allow the creation of client application in the form of a Java Archive
+          (.jar) which will have the role to connect to a specific IP address and port specified by the user,
+    \begin{enumerate}
+        \item The Java Archive (.jar) should be created at a file location on the storage system specified
+              by the user,
+    \end{enumerate}
+    \item The Desktop Application must save the preferences of the application in an XML
+          (Extensible Markup Language) file
+    \begin{enumerate}
+        \item The preferences of the application must be saved using the Java Architecture for XML Binding (JAXB),
+        \item The preferences file must contain a boolean variable related to the theme of the application,
+              the value being True for the light theme and False for the dark theme.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\noindent
+\textbf{Networking Programming}
+
+\begin{enumerate}
+    \item The Desktop Application must use the Client-Server Network Architecture,
+    \item The Desktop Application must use the Transmission Control Protocol (TCP) for data transfer,
+    \item The Desktop Application must allow the establishment of connections from clients or agents on the
+          current machine's address and on specific ports defined by the user,
+    \item The Desktop Application must be able to stop the establishment of connections from clients or agents
+          on the current machine's address and on the specific ports defined by the user previously,
+    \item The Desktop Application must be able to receive packets from the clients or agents connected
+          to the server,
+    \item The Desktop Application must be able to send packets to the clients or agents connected to the server,
+    \item The Desktop Application must maintain the connection between the server and clients,
+    \item The Desktop Application should allow the clients to reconnect to the server if the
+          connection will be lost.
+\end{enumerate}
+
+\noindent
+\textbf{Security}
+
+\begin{enumerate}
+    \item The Desktop Application should use symmetric or asymmetric encryption for the transfer of
+          data between the clients and server.
+\end{enumerate}
+
+\noindent
+\textbf{Local Database}
+
+\begin{enumerate}
+    \item The Desktop Application must present a Local Database created using SQLite.
+    \begin{enumerate}
+        \item The local database must allow the creation of a table for listening ports called connections,
+        \item The local database must allow the addition of records in the form of listening ports to a SQLite
+        table called connections,
+        \item The local database must allow the deletion of records in the form of listening ports from the SQLite
+        table called connections.
+        \item The local database could allow the modification of records for the listening ports added to the
+        SQLite table called connections.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\noindent
+\textbf{Authentication System}
+
+\begin{enumerate}
+    \item The Desktop Application must use an AWS Cognito Authentication System
+    \begin{enumerate}
+        \item The Authentication System must allow the user to Log In using an email address and a password,
+        \item The Authentication System must allow the user to register using an email address, a password,
+              their full name and a security code,
+        \item The Authentication System must allow the user to register only if the input provided for the email
+              address matches the format provided is valid, the full name does not contain numbers or special
+              characters, the password consists of an upper case letter, a lower case letter, a number and a
+              special character.
+        \item The Authentication System must allow only genuine users to access the main application.
+        \item The Authentication System could allow the user to reset their password by using their email address,
+    \end{enumerate}
+\end{enumerate}
+
+\noindent
+\textbf{Machine Learning}
+
+\begin{enumerate}
+    \item The desktop application should use the machine learning algorithm called Support Vector Machines (SVM)
+          in order to perform a classification of the Hard-Disk S.M.A.R.T (Self-Monitoring, Analysis and Reporting
+          Technology) indicators collected data from the machines which will be monitored using the Java Archive
+          (.jar) clients or agents and provide predictions related to hard-disk failure.
+    \begin{enumerate}
+        \item The Hard-Disk S.M.A.R.T indicators data should be collected from the clients machines and saved into
+              a Comma-separated values (.csv) file.
+        \item The Hard-Disk S.M.A.R.T indicators data should be explored before any pre-processing operations,
+        \item The collected data should be pre-processed before creating a Support Vector Machines (SVM) model by
+              verifying the file for any missing values,
+        \item The collected data should be pre-processed before creating a Support Vector Machines (SVM) model by
+              verifying the data if normalisation can be applied,
+        \item The collected data should be used for training a Support Vector Machines (SVM) model in order to
+              provide predictions related to hard-disk failures.
+        \item The Support Vector Machines (SVM) model should be trained using multiple C parameter values and
+              multiple Gamma parameter values in order to get the best results.
+        \item The trained Support Vector Machines (SVM) model should be tested on a sample of Hard-Disks
+              S.M.A.R.T indicators data in order to evaluate the accuracy and error rate of the model.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\noindent
+\textbf{Interface}
+
+\begin{enumerate}
+    \item The Graphical User Interface could present a Window for the Authentication Process,
+    \begin{enumerate}
+        \item The Window could present a button to Log In into the main application,
+        \item The Window could present a button to register into the system,
+    \end{enumerate}
+    \item The Graphical User Interface could present a Window for the Terms of Service informative process which
+    will inform the user of the legal and ethical aspect of using the application,
+    \begin{enumerate}
+        \item The Window could present a button to visualise the full terms of service,
+        \item The Window could present a button for declining the terms of service,
+        \item The Window could present a button for accepting the terms of service,
+    \end{enumerate}
+    \item The Graphical User Interface could present a Window for the Main features of the application which
+    will be available once the authentication process will be completed,
+    \item The Graphical User Interface could present a welcome message with the user's full name once the
+    authentication process will be completed,
+    \item The Graphical User Interface could present a panel for general information called Dashboard for the main
+    Window of the application,
+    \begin{enumerate}
+        \item The general information panel could present a widget that shows the number of clients
+        connected to the server for the current application session,
+        \item The general information panel could present a widget that shows the number of ports opened
+        by the application for the current application session,
+        \item The general information panel could present a widget that shows the number of clients connected
+        to the server that may require maintenance assistance for the current application session,
+        \item The general information panel could present a widget that shows the number of clients connected
+        to the server with resolved maintenance problems for the current application session.
+        \item The general information panel could present a widget that shows the activity of the application
+        for a week time when considering the number clients connected, open ports, maintenance assistance
+        and resolved issues.
+        \item The general information panel could present a widget that shows the number of causes of maintenance
+        the current application session.
+        \item The general information panel could present a widget that shows the number of maintenance
+        notifications classified as critical, warning and informative for the current application session.
+    \end{enumerate}
+    \newpage
+    \item The Graphical User Interface could present a panel for data analysis called Analytics for the main
+    Window of the application,
+    \begin{enumerate}
+        \item The data analysis panel could present an area chart for the collection of Hard-Disk S.M.A.R.T data
+        over a week time period,
+        \item The data analysis panel could present a table for maintenance or failure events sent by the clients
+        machines with columns named as Time, Level, Event, Platform, Architecture, Computer Name, Host and
+        Port.
+    \end{enumerate}
+    \item The Graphical User Interface could present a panel for remote execution of instructions called Machines
+    for the main Window of the application,
+    \begin{enumerate}
+        \item The remote execution of instructions panel could present a table containing the current clients
+        connected to the server in the form of table records with columns named as Platform, Architecture
+        Computer Name, Host, Port, Payload and Action.
+    \end{enumerate}
+    \item The Graphical User Interface could present a panel for past and scheduled maintenance events
+    called Calendar for the main Window of the application,
+    \begin{enumerate}
+        \item The scheduled maintenance events panel could contain a calendar view created using the user
+        interface java framework called CalendarFX.
+    \end{enumerate}
+    \item The Graphical User Interface could present a panel for the establishment of connections called Network
+    for the main Window of the application,
+    \begin{enumerate}
+        \item The establishment of clients connections panel could present a label called "TCP Port",
+        \item The establishment of clients connections panel could present a text field for the
+        TCP Port information,
+        \item The establishment of clients connections panel could present a table containing a list of TCP
+        listening ports.
+        \item The establishment of clients connections panel could present a button for the addition of TCP Ports
+        to a SQLite Database once the information will be provided by the user using the TCP Port text field,
+        \item The establishment of clients connections panel could present a button for the deletion of the TCP
+        listening ports from the table containing the listening ports,
+        \item The establishment of clients connections panel could present a button for the creation of Server Sockets
+        using the TCP ports in the table containing the ports.
+        \item The establishment of clients connections panel could present a button for additional information
+        related to the usage of the panel in cause in order to guide the user.
+    \end{enumerate}
+    \newpage
+    \item The Graphical User Interface could present a panel for the creation of the agent or client called Agent
+    for the main Window of the application,
+    \begin{enumerate}
+        \item The agent panel could present a label for the IP or DNS address of the Server Socket
+        where the client or agent will connect to,
+        \item The agent panel could present a label for the listening port of the Server Socket
+        where the client or agent will connect to,
+        \item The agent panel could present a text field for the IP address of the Server Socket
+        where the client or agent will connect to,
+        \item The agent panel could present a text field for the port of the Server Socket
+        where the client or agent will connect to,
+        \item The agent panel could present a button for the addition of the IP address and Port
+        of the Server Socket to a list which will be displayed in a table, this information ultimately being
+        used to allow the client or agent to connect to the Server or Command and Control (C\&C),
+        \item The agent panel could present a text field for the naming of the Java Archive
+        (.jar) Agent.
+        \item The creation of the agent panel could present a button in order to create a Java Archive (.jar)
+        which will allow the connection of the client to the server once executed by the user on a specific
+        machine.
+    \end{enumerate}
+    \item The Graphical User Interface could present a panel for the selection of preferences called Settings
+    for the main Window of the application,
+    \begin{enumerate}
+        \item The settings panel could present a Radio Button interface component to select a light theme for the
+        application,
+        \item The settings panel could present a Radio Button interface component to select a dark theme for the
+        application.
+    \end{enumerate}
+    \item The Graphical User Interface could present a panel for the activity of the application called Events
+    Log for the main Window of the application,
+    \item The Graphical User Interface could present a panel for additional application information called About
+    for the main Window of the application,
+    \begin{enumerate}
+        \item The additional application information panel could present a button for the terms of usage of the
+        desktop application,
+        \item The additional application information panel could present a button for any future software changes,
+        \item The additional application information panel could present a button for the possibility to get into
+        contact with the creators of the application,
+        \item The additional application information panel could present a button for a manual of the application.
+    \end{enumerate}
+    \item The Graphical User Interface could present a navigation system for the panels of the main application.
+\end{enumerate}
+
+\newpage
+
+\subsection{Agent (Client-Side)}
+
+\noindent
+\textbf{Controller}
+
+\begin{enumerate}
+    \item The Agent Application must validate configuration data
+    \begin{enumerate}
+        \item The validation of the configuration data must be done using the third party java library
+              called Appache Commons,
+        \item The validation of the configuration data must be performed for the TCP Listening ports when
+              trying to establish a connection,
+        \item The validation of the configuration data must be performed for the IP or DNS address when
+              trying to establish a connection.
+    \end{enumerate}
+\end{enumerate}
+
+\noindent
+\textbf{Network Programming}
+
+\begin{enumerate}
+    \item The Agent Application must use the Client-Server Network Architecture,
+    \item The Agent Application must use the Transmission Control Protocol (TCP) for data transfer,
+    \item The Agent Application must be able to connect to the server on a specific address and
+          on ports defined by the user,
+    \item The Agent Application must be able to receive packets from the server once connected,
+    \item The Agent Application must be able to send packets to the server once connected,
+    \item The Agent Application must be able to retrieve hardware and software information from the machine
+          that will execute the Java Archive (.jar).
+    \item The Agent Application should be able to reconnect to the server if the connection will be lost.
+\end{enumerate}
+
+\noindent
+\textbf{Security}
+
+\begin{enumerate}
+    \item The Desktop Application should use symmetric or asymmetric encryption for the transfer of
+    data between the clients and server.
+\end{enumerate}
+
+\newpage
+
+\section{Non-Functional Requirements}
+
+\subsection{Technologies}
+
+\begin{enumerate}
+    \item The general-purpose programming language called Java must be used for the development of both
+          the Command and Control (C\&C) Server application and the Agent application,
+    \begin{enumerate}
+        \item The Build Automation tool called Maven must be used for the development of the applications,
+        \item The User Interface framework called JavaFX must be used for the creation of the
+              Graphical User Interface,
+        \item The Third-Party library called TileFX must be used for the creation of application charts,
+        \item The Third-Party library called CalendarFX must be used for the creation of the
+              application calendar,
+        \item The Third-Party library called MigLayout must be used for the layout of the widgets,
+        \item The Third-Party library called Operating System and Hardware Information (OSHI) must be used
+              to access the hardware and software information by the agent application,
+        \item The Third-Party library called Statistical Machine Intelligence and Learning Engine should be
+              used in order to train a Support Vector Machines (SVM) model from the Hard-Disks S.M.A.R.T data.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Design}
+
+\begin{enumerate}
+    \item The Desktop Application should use a two column approach for the layout of the application,
+    \begin{enumerate}
+        \item The Desktop Application should present a side menu containing widgets for all panels of
+              the application,
+        \item The Desktop Application should present a main content section.
+    \end{enumerate}
+    \item The Desktop Application should use the Robert Gordon University purple colour for the light theme of
+          the application,
+    \item The Desktop Application should use a dark shade of the blue colour for the dark theme of
+          the application.
+\end{enumerate}
+
+\subsection{Laws}
+
+\begin{enumerate}
+    \item The Desktop Application must comply with the Computer Misuse Act 1990,
+    \item The Desktop Application must comply with the General Data Protection Regulation 2018,
+    \item The Desktop Application must comply with the Intellectual Property Act 2014.
+\end{enumerate}
+
+\subsection{Constraints}
+
+\begin{enumerate}
+    \item The project must be partially completed before the 22\textsuperscript{nd} of February
+          for the proof of concept deadline.
+\end{enumerate}
+
+\subsection{Security}
+
+\begin{enumerate}
+    \item The software product must not store personal information of its users, an exception being the
+          AWS Cognito Database which has the role to authenticate genuine users, nevertheless encryption
+          techniques such as symmetric or asymmetric encryption approaches should be used when
+          transferring data over the network.
+\end{enumerate}
+
+\subsection{Software Quality}
+
+\noindent
+\textbf{Extensibility}
+
+\begin{enumerate}
+    \item As it was seen in the background chapter, the maintenance of computer systems it is required for
+          multiple areas of activity. This event naturally will suggest if the project could be applied to
+          any industry that uses computer systems in order to solve problems.
+\end{enumerate}
+
+\noindent
+\textbf{Portability}
+
+\begin{enumerate}
+    \item The Command and Control (C\&C) Server Application and the Agent (Client-Side) Application must
+          be compatible with the Windows Operating System.
+\end{enumerate}
+
+\noindent
+\textbf{Scalability}
+
+\begin{enumerate}
+    \item The Command and Control (C\&C) Server Application should be scalable when considering the number
+          of clients that will be allowed to connect to the server.
+\end{enumerate}
+
+\noindent
+\textbf{Testability}
+
+\begin{enumerate}
+    \item The Command And Control (C\&C) Server Application and the Agent (Client-Side) Application should
+          be tested using a manual testing approach.
+\end{enumerate}
+
+\noindent
+\textbf{Stability}
+
+\begin{enumerate}
+    \item The Command and Control (C\&C) Server Application and the Agent (Client-Side) Application should
+          be stable during the operation of the applications.
+\end{enumerate}
+
+\noindent
+\textbf{Reusability}
+
+\begin{enumerate}
+    \item The network programming sections of the Command and Control (C\&C) Server and the Agent
+          (Client-Side) Application should be reusable by other software developers.
+\end{enumerate}
