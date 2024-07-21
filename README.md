@@ -1,6 +1,6 @@
 ## CM4105 Honours Project - Darie-Dragos Mitoiu
 
-![](Cocs/33a064e249fd83aec001cf51097e97a0.png)
+![](Docs/33a064e249fd83aec001cf51097e97a0.png)
 
 The CM4105 Honours Project is a Bundle of Machine Learning Experiments written in Python and Java Samples with the
 ultimate goal of allowing the creation of a JavaFX Desktop Application that uses the machine learning experiments
