@@ -12,6 +12,7 @@ Logistic Regression Model and the Multi-Layer Perceptron Model.
 
 * [Python](http://www.python.org) (2.7 required)
 * [Java](http://www.java.com) (1.8 required)
+* [sklearn](https://scikit-learn.org) (required)
 * [matplotlib](https://www.matplotlib.org/) (required)
 * [CX_Freeze](https://cx-freeze.readthedocs.io/en/stable) (optional)
 * [Git](https://git-scm.com) (optional)
