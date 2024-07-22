@@ -16,6 +16,7 @@ Logistic Regression Model and the Multi-Layer Perceptron Model.
 * [pandas](https://pandas.pydata.org) (required)
 * [matplotlib](https://www.matplotlib.org/) (required)
 * [CX_Freeze](https://cx-freeze.readthedocs.io/en/stable) (optional)
+* [LaTeX](https://www.latex-project.org) (optional)
 * [Git](https://git-scm.com) (optional)
 
 ## Installation
