@@ -22,7 +22,7 @@ Logistic Regression Model and the Multi-Layer Perceptron Model.
 
 The [CM4105 Honours Project installation guides] includes instructions for installing the project as part of a local application.
 
-## Running Graded Unit
+## Running CM4105 Honours Project
 
 ### Run-time options:
 
