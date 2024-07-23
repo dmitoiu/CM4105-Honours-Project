@@ -8,6 +8,21 @@ to provide accurate predictions related to computer systems failure.
 The Application supports Algorithms such as the Support Vector Machines, Random Forest Model, 
 Logistic Regression Model and the Multi-Layer Perceptron Model.
 
+## Problem Definition
+
+**The applications, services and resources of a desktop or a server type of computer system could be organized
+and scheduled in a manner which would reduce the impact of the system’s failure whenever predicted by
+making use of right techniques which would fit the equipment in cause and classify specific events that would
+occur in computer systems as events that would require maintenance or just as informative events if the severity
+of the events is low in order to secure the normal functionality of the machines.**
+
+## Story
+
+**The focus of this research is to try to forecast possible events that could lead to computer systems failure by
+reviewing and then selecting the right computer systems failure predictions methods associated with the right
+hardware sensors. The ultimate goal of the work presented in this paper is to implement computer systems failure
+forecasting features into a desktop application in order to reduce the impact caused by such failure events.**
+
 ## CM4105 Honours Project Compile-time Dependencies
 
 * [Python](http://www.python.org) (2.7 required)
