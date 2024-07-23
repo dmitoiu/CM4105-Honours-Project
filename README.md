@@ -23,6 +23,10 @@ reviewing and then selecting the right computer systems failure predictions meth
 hardware sensors. The ultimate goal of the work presented in this paper is to implement computer systems failure
 forecasting features into a desktop application in order to reduce the impact caused by such failure events.**
 
+## CM4105 Honours Project Report
+
+[Coursework Report](Report/1905367_Darie-Dragos_Mitoiu_Honours_Report.pdf)
+
 ## CM4105 Honours Project Compile-time Dependencies
 
 * [Python](http://www.python.org) (2.7 required)
