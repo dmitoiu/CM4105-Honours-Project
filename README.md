@@ -25,7 +25,7 @@ forecasting features into a desktop application in order to reduce the impact ca
 
 ## CM4105 Honours Project Report
 
-[Coursework Report](Report/1905367_Darie-Dragos_Mitoiu_Honours_Report.pdf)
+[Honours License Report](Report/1905367_Darie-Dragos_Mitoiu_Honours_Report.pdf)
 
 ## CM4105 Honours Project Compile-time Dependencies
 
