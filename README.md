@@ -10,11 +10,13 @@ Logistic Regression Model and the Multi-Layer Perceptron Model.
 
 ## Problem Definition
 
-**The applications, services and resources of a desktop or a server type of computer system could be organized
-and scheduled in a manner which would reduce the impact of the system’s failure whenever predicted by
-making use of right techniques which would fit the equipment in cause and classify specific events that would
-occur in computer systems as events that would require maintenance or just as informative events if the severity
-of the events is low in order to secure the normal functionality of the machines.**
+**As computer systems are used more and more for problem-solving, the complexity of the systems grows just as much;
+they are also becoming more dynamic due to the devices mobility, modifications in the environment of execution,
+software updates, hardware upgrades, maintenance events and hardware components replacements.
+The classical reliability theory that concerns the computer systems or the conventional approaches put in place for
+problem-solving present a significant lack of consideration of the actual state of the computer systems as they are
+not capable to offer a reflection for the dynamic and the unforeseen runtime of a computer system or the failure of
+processes.**
 
 ## Story
 
